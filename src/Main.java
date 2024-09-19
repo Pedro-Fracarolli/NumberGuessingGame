@@ -6,7 +6,6 @@ public class Main {
     static int chances = 0;
     static int misses = 0;
     static int play = 1;
-    static int current_score = 0;
 
     public static void main(String[] args) {
 
@@ -30,8 +29,6 @@ public class Main {
 
                 if (player_guess == random_number) {
                     System.out.println("Congratulations! You guessed the correct number in " + misses + " attempts.");
-                    current_score = chances - misses;
-                    System.out.println("Score: " + current_score + " Points.");
                     System.out.println("Thanks for playing.");
                     break;
                 }
