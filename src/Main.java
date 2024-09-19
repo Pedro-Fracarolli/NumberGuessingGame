@@ -82,16 +82,13 @@ public class Main {
     }
 
     public static String hint(int random_number) {
-        Random hint_generator = new Random();
-        int random_hint = hint_generator.nextInt(2);
-
         int last_digit = random_number % 10;
         return "This number ends with... " + last_digit;
 
     }
 
     public static String difficulty_level(int difficulty) {
-        String result = "";
+        String result;
 
         switch(difficulty) {
             case 1:
