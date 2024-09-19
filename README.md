@@ -67,4 +67,5 @@ Command line or terminal access for compiling and running the Java program
 
 ## Acknowledgments
 
-This game was inspired by classic number guessing games and is intended to be a simple and fun way to practice Java programming.
+This game was inspired by classic number guessing games and is intended to be a simple and fun way to practice Java programming as part of the Java learning roadmap: https://roadmap.sh/projects/number-guessing-game.
+
