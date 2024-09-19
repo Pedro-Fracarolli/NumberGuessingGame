@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -23,8 +24,14 @@ public class Main {
             System.out.print("Enter your choice: "); int difficulty = scan.nextInt();
 
             String diff = difficulty_level(difficulty);
+
+            if (Objects.equals(diff, "Invalid")) {
+                System.out.print("\n");
+                continue;
+            }
             System.out.println("I'm thinking of a number between 1 and 100");
             int random_number = computer_turn();
+
             while(true) {
                 System.out.print("- ");
                 int player_guess = scan.nextInt();
@@ -87,7 +94,8 @@ public class Main {
             String answer = scan.next().toLowerCase();
 
             if (answer.equals("y")) {
-                System.out.println("Restarting...");
+                System.out.println("Restarting...\n");
+
                 play = 1;
                 chances = 0;
                 misses = 0;
