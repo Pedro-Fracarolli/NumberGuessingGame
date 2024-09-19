@@ -4,6 +4,8 @@ import java.util.Scanner;
 public class Main {
 
     static int chances = 0;
+    static int highest_score = 0;
+    static int current_score = 0;
     static int misses = 0;
     static int play = 1;
 
@@ -30,6 +32,29 @@ public class Main {
                 if (player_guess == random_number) {
                     System.out.println("Congratulations! You guessed the correct number in " + misses + " attempts.");
                     System.out.println("Thanks for playing.");
+                    current_score = chances;
+
+                    if (diff.equals("Medium")) {
+                        System.out.println("Difficulty Bonus Points: +5");
+                        current_score += 5;
+                    } else if (diff.equals("Hard")) {
+                        System.out.println("Difficulty Bonus Points: +15");
+                        current_score += 15;
+                    }
+
+                    if (highest_score == 0) {
+                        highest_score = current_score;
+                    } else if (current_score > highest_score) {
+                        highest_score = current_score;
+                        System.out.println("New record: " + highest_score + "!");
+                    }
+
+
+                    System.out.println("Highest score: " + highest_score);
+                    System.out.println("Current score: " + current_score);
+                    if (highest_score != current_score) {
+                        System.out.println("You were " + (highest_score - current_score) + " Points away from the highest score!");
+                    }
                     break;
                 }
                 if (player_guess > random_number) {
@@ -62,12 +87,12 @@ public class Main {
             String answer = scan.next().toLowerCase();
 
             if (answer.equals("y")) {
-                System.out.println("Recomeçando...");
+                System.out.println("Restarting...");
                 play = 1;
                 chances = 0;
                 misses = 0;
             } else {
-                System.out.println("Saindo...");
+                System.out.println("Exiting...");
                 play = 0;
             }
         } while (play == 1);
