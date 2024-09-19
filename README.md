@@ -41,11 +41,11 @@ Here is a snippet of the main logic for the game:
 ```java
 // Set the difficulty level and generate a random number
 String diff = difficulty_level(difficulty);
-System.out.println("I'm thinking of a number between 1 and 100");
 int random_number = computer_turn();
 
 // Start guessing loop
 while (true) {
+    System.out.println("I'm thinking of a number between 1 and 100");
     System.out.print("- ");
     int player_guess = scan.nextInt();
 
